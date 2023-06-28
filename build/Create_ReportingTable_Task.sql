@@ -1,4 +1,5 @@
 --This code will create the reporting table for tableau report
+--The task will be executed once staging table task completes
 CREATE OR REPLACE TASK create_olympics_reporting_table 
 WAREHOUSE = compute_wh
 AFTER CREATE_OLYMPICS_STAGED
