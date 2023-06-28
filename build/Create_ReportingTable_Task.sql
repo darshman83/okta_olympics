@@ -6,6 +6,7 @@ AFTER CREATE_OLYMPICS_STAGED
 AS
 
 CREATE OR REPLACE TABLE olympics_dev.olympics_analytics.olympics_reporting AS
+--Update team value to remove "-[#]" to get true unique count
 with cleansed_countries as (
     SELECT *,
     REGEXP_REPLACE(team, '-[0-9]+$', '') as unique_team
